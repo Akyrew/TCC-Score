@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Usuário</title>
+  <link rel="stylesheet" href="cadastrar.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+      <div class="welcome-text">
+        <h1 class="fade-in">Cadastro</h1>
+        <p class="subtitle">Crie sua conta para acessar o sistema</p>
+      </div>
+
+      <form class="login-form" id="formCadastro" method="POST" action="cadastrar.php">
+        <div class="input-group">
+          <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+        </div>
+
+        <div class="input-group">
+          <input type="text" name="cpf" id="cpf" placeholder="CPF (somente números)" maxlength="11" required>
+        </div>
+
+        <div class="input-group">
+          <select name="tipo" id="tipo" required>
+            <option value="">Selecione o tipo</option>
+            <option value="Secretaria">Secretaria</option>
+            <option value="Professor">Professor</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <input type="email" name="email" id="email" placeholder="E-mail" required>
+        </div>
+
+        <div class="input-group">
+          <input type="email" name="confirmar_email" id="confirmar_email" placeholder="Confirmar E-mail" required>
+          <span class="error-message">E-mails não coincidem</span>
+        </div>
+
+        <div class="input-group">
+          <input type="password" name="senha" id="senha" placeholder="Senha" required>
+        </div>
+
+        <div class="input-group">
+          <input type="password" name="confirmar_senha" id="confirmar_senha" placeholder="Confirmar Senha" required>
+          <span class="error-message">Senhas não coincidem</span>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <div class="btn-voltar" >
+        <button onclick="window.location.href='../index.html'">⬅ Voltar</button>
+      </div> 
+    </div>
+
+    <div class="header">
+      <span>S.C.O.R.E</span>
+      <img src="../pictures/logo.jpg" alt="Logo" />
+    </div>
+
+    <div class="right-side">
+      <img src="../pictures/login.png" alt="Login" />
+    </div>
+  </div>
+
+  <script src="cadastrar.js"></script
+    
+</body>
+</html>

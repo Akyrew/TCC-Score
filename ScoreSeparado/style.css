@@ -1,0 +1,303 @@
+   html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* ===== ANIMAÇÃO GERAL ===== */
+    @keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInOnly {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .welcome-text {
+      text-align: center;
+      margin-bottom: 40px;
+      /* empurra o form pra baixo, subindo o texto */
+      transform: translateY(-70px);
+      /* sobe só o texto */
+    }
+
+    .welcome-text h1 {
+      margin: 0;
+    }
+
+    .welcome-text .subtitle {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .welcome-text .fade-in {
+      color: white;
+      font-size: 2.5rem;
+      margin: 0;
+      animation: fadeDown 1s ease forwards;
+    }
+
+    .subtitle {
+      color: white;
+      font-size: 1.1rem;
+      margin-top: 8px;
+      opacity: 0;
+      animation: fadeDown 1s ease forwards;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+
+
+    /* ===== CABEÇALHO (LOGO + TEXTO) ===== */
+    .header {
+      position: absolute;
+      top: 15px;
+      right: 0px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: fadeInOnly 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .header img {
+      height: 70px;
+      width: 130px;
+      border-radius: 50%;
+      animation: fadeInOnly 1.2s ease forwards;
+    }
+
+    .header span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: black;
+      position: relative;
+      top: -6px;
+      /* sobe 4px */
+      left: 11px;
+      /* move 6px pra direita */
+    }
+
+    /* ===== TEXTO BEM-VINDO ===== */
+    .fade-in {
+      color: white;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      /* diminui a margem pra subir um pouco */
+      animation: fadeDown 1s ease forwards;
+    }
+
+
+    /* ===== FORMULÁRIO ===== */
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      animation: fadeDown 1s ease forwards;
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+
+    .login-form input {
+      width: 250px;
+      padding: 10px;
+      border: none;
+      border-radius: 19px;
+      font-size: 1rem;
+    }
+
+    .login-form p.login-title {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      align-items: flex-start;
+      /* alinha texto login à esquerda das caixas */
+      width: 250px;
+      /* mesma largura das caixas */
+    }
+
+    /* Link de cadastro */
+    .signup-link {
+      font-size: 0.9rem;
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+      align-self: flex-start;
+      /* alinha o texto à esquerda dentro do form */
+      margin-left: calc(50% - 125px);
+      /* para alinhar com as caixas (250px largura / 2) */
+    }
+
+    /* Estilos para mensagens e ícones de validação */
+    .input-group {
+      position: relative;
+      width: 280px;
+      margin-bottom: 10px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 35px 10px 10px;
+      /* espaço para o ícone */
+      border: none;
+      border-radius: 19px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .help-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #ffffff; /* Botão branco */
+      color: #51b6fa;             /* Texto ? azul */
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .help-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Ícone de ok (verde) */
+    .input-group.success input {
+      border: 2px solid #4CAF50;
+      padding-right: 35px;
+    }
+
+    .input-group.error input {
+      border: 2px solid #f44336;
+      padding-right: 35px;
+    }
+
+    /* Ícone posicionado no canto direito do input */
+    .input-group .icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      display: none;
+    }
+
+    .input-group.success .icon.success-icon {
+      display: block;
+      color: #4CAF50;
+    }
+
+    .input-group.error .icon.error-icon {
+      display: block;
+      color: #f44336;
+      top: 35%;
+      /* antes era 50%, diminui para subir */
+      transform: translateY(-50%);
+    }
+
+    /* Mensagem de erro */
+    .input-group .error-message {
+      color: #f44336;
+      font-size: 0.85rem;
+      margin-top: 2px;
+      display: none;
+    }
+
+    .input-group.error .error-message {
+      display: block;
+    }
+
+    /* Link de cadastro permanece igual */
+    .signup-link {
+      font-size: 0.9rem;
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-left: calc(50% - 125px);
+    }
+
+    .signup-link:hover {
+      color: #d0e6ff;
+    }
+
+    .login-form button {
+      width: 250px;
+      padding: 10px;
+      background-color: white;
+      color: #51b6fa;
+      border: none;
+      border-radius: 19px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .login-form button:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* ===== LADO ESQUERDO ===== */
+    .left-side {
+      flex: 1;
+      background-color: #51b6fa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* volta o form pro centro */
+      align-items: center;
+    }
+
+    /* ===== LADO DIREITO ===== */
+    .right-side {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .right-side img {
+      max-width: 450px;
+      width: 80%;
+      height: auto;
+      animation: fadeInOnly 1.5s ease forwards;
+      opacity: 0;
+    }

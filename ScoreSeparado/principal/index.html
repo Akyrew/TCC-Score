@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Principal</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+       document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".botoes-container");
+
+    fetch("get_locais.php")
+        .then(res => res.json())
+        .then(locais => {
+            locais.forEach(local => {
+                const btn = document.createElement("button");
+                btn.className = "btn-local";
+                btn.textContent = local;
+                btn.dataset.local = local;
+                btn.addEventListener("click", () => {
+                    window.location.href = `chat/chat.php?local=${encodeURIComponent(local)}`;
+                });
+                container.appendChild(btn);
+            });
+        })
+        .catch(err => console.error("Erro ao carregar locais:", err));
+});
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Painel Principal</h1>
+        <p>Escolha o local desejado</p>
+    </header>
+  
+
+    <main class="botoes-container"></main>
+
+</body>
+</html>

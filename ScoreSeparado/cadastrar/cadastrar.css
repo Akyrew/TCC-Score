@@ -1,0 +1,55 @@
+/* Importa todo o CSS fornecido */
+@import url('../style.css');
+
+/* Ajustes para select */
+.login-form select {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 19px;
+  font-size: 1rem;
+}
+.btn-voltar {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #ff6666;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-voltar:hover {
+    background-color: #e05555;
+}
+
+
+.header {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInOnly 1.2s ease forwards;
+  opacity: 0;
+}
+
+.header img {
+  height: 70px;
+  width: 130px;
+  border-radius: 50%;
+  animation: fadeInOnly 1.2s ease forwards;
+}
+
+.header span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: -6px;
+  /* sobe 4px */
+  left: 11px;
+  /* move 6px pra direita */
+}

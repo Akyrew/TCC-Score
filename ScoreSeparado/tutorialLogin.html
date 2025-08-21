@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tutorial - S.C.O.R.E</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --blue: #4ab4ff;
+            --card-bg: rgba(255, 255, 255, .12);
+            --radius: 18px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .tutorial-wrap {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 32px 20px;
+        }
+
+        .title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin: 0 0 16px;
+            animation: fadeDown 0.8s ease both;
+        }
+
+        .subtitle {
+            opacity: .9;
+            text-align: center;
+            margin: 0 0 28px;
+            animation: fadeDown 0.9s ease both;
+        }
+
+        .nav-chips {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+
+        .chip {
+            background: var(--card-bg);
+            padding: 8px 14px;
+            border-radius: 999px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        h2.flow-title {
+            margin: 26px 0 14px;
+            font-size: 1.4rem;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px;
+            display: grid;
+            grid-template-columns: 52px 1fr 260px;
+            gap: 16px;
+            align-items: start;
+            animation: fadeInOnly 0.9s ease both;
+            margin-bottom: 14px;
+        }
+
+        .num {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: #1673cc;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .12)
+        }
+
+        .step-body h3 {
+            margin: 0 0 6px;
+            font-size: 1.05rem;
+            color: #fff
+        }
+
+        .step-body p,
+        .step-body ul {
+            margin: 0;
+            line-height: 1.55;
+            font-size: .98rem
+        }
+
+        .step-body ul {
+            padding-left: 18px;
+            margin-top: 6px
+        }
+
+        figure.step-fig {
+            margin: 0;
+            background: rgba(255, 255, 255, .08);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .16)
+        }
+
+        figure.step-figB {
+            margin: 0;
+            background: rgba(255, 255, 255, .08);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .16)
+        }
+
+        figure.step-figB img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        figure.step-fig img {
+            display: block;
+            width: 100%;
+            height: 160px;
+            object-fit: cover
+        }
+
+        figure.step-fig figcaption {
+            font-size: .84rem;
+            padding: 6px 10px;
+            opacity: .9
+        }
+
+        @media (max-width:900px) {
+            .step-card {
+                grid-template-columns: 52px 1fr
+            }
+
+            figure.step-fig {
+                grid-column: 1/-1;
+                margin-top: 8px
+            }
+        }
+
+        /* animações iguais ao seu projeto */
+        @keyframes fadeDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-12px)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes fadeInOnly {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tutorial-wrap">
+        <h1 class="title">Tutorial S.C.O.R.E</h1>
+        <p class="subtitle">Escolha a opção a qual atende sua necessidade.</p>
+
+        <div class="nav-chips">
+            <a class="chip" href="#fluxo-login">Entrar (já tenho conta)</a>
+            <a class="chip" href="#fluxo-cadastro">Cadastrar (não tenho conta)</a>
+        </div>
+
+        <!-- ==================== FLUXO A: LOGIN ==================== -->
+        <section id="fluxo-login" aria-labelledby="t-login">
+            <h2 id="t-login" class="flow-title">Entrar (já tenho conta)</h2>
+
+            <article class="step-card">
+                <div class="num">1</div>
+                <div class="step-body">
+                    <h3>Abrir a página de login</h3>
+                    <p>Na tela “Bem-vindo ao S.C.O.R.E”, você verá os campos <strong>RM</strong> e
+                        <strong>Senha</strong>, o botão <strong>Entrar</strong> e o link <em>Ainda não tem uma conta?
+                            Cadastre-se</em>.</p>
+                </div>
+                <figure class="step-fig">
+                    <img src="./pictures/pagInicial.png" alt="Tela de login - visão geral">
+                    <figcaption>Foto 1 — Tela de login.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">2</div>
+                <div class="step-body">
+                    <h3>Preencher RM</h3>
+                    <p>Digite o seu <strong>RM</strong> exatamente como fornecido pela escola (mantenha zeros à esquerda
+                        e não use espaços).</p>
+                </div>
+                <figure class="step-fig">
+                    <img src="./pictures/rmP.png" alt="Campo RM preenchido">
+                    <figcaption>Foto 2 — Campo RM.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">3</div>
+                <div class="step-body">
+                    <h3>Preencher Senha</h3>
+                    <p>Digite sua senha. Lembre-se: diferencia maiúsculas e minúsculas.</p>
+                </div>
+                <figure class="step-fig">
+                    <img src="./pictures/senhaP.png" alt="Campo senha preenchido">
+                    <figcaption>Foto 3 — Campo Senha.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">4</div>
+                <div class="step-body">
+                    <h3>Clicar em “Entrar”</h3>
+                    <p>Confira os dados e clique em <strong>Entrar</strong> (ou pressione <strong>Enter</strong>) para
+                        acessar o painel.</p>
+                </div>
+                <figure class="step-fig">
+                    <img src="./pictures/btEntrar.png" alt="Botão Entrar destacado">
+                    <figcaption>Foto 4 — Botão Entrar.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">5</div>
+                <div class="step-body">
+                    <h3>Se <u>não</u> tiver conta</h3>
+                    <p>Clique no link <strong>“Ainda não tem uma conta? Cadastre-se”</strong> para ir ao formulário de
+                        cadastro. Depois, siga o <strong>Fluxo B</strong> abaixo.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/cadLog.png" alt="Link Cadastre-se destacado">
+                    <figcaption>Foto 5 — Link “Cadastre-se”.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <!-- ==================== FLUXO B: CADASTRO ==================== -->
+        <section id="fluxo-cadastro" aria-labelledby="t-cad">
+            <h2 id="t-cad" class="flow-title">Cadastrar (não tenho conta)</h2>
+
+            <article class="step-card">
+                <div class="num">1</div>
+                <div class="step-body">
+                    <h3>Abrir a tela de cadastro</h3>
+                    <p>Você verá o título <strong>Cadastro</strong> e os campos do formulário.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/pagCad.png" alt="Tela de cadastro - visão geral">
+                    <figcaption>Tela de cadastro.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">2</div>
+                <div class="step-body">
+                    <h3>Nome completo</h3>
+                    <p>Digite seu nome e sobrenome como registrados na escola.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/campoNome.png" alt="Campo Nome completo">
+                    <figcaption>Nome completo.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">3</div>
+                <div class="step-body">
+                    <h3>CPF (somente números)</h3>
+                    <p>Preencha o CPF sem pontos nem traços. Ex.: <code>12345678900</code>.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/cpfP.png" alt="Campo CPF">
+                    <figcaption>CPF sem formatação.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">4</div>
+                <div class="step-body">
+                    <h3>Selecione o tipo</h3>
+                    <p>Escolha a opção correspondente (Secretaria, Professor, etc.).</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/campoTipo.png" alt="Seleção de tipo">
+                    <figcaption>Dropdown de tipo.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">5</div>
+                <div class="step-body">
+                    <h3>E-mail</h3>
+                    <p>Informe um e-mail válido (preferencialmente institucional).</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/emailP.png" alt="Campo E-mail">
+                    <figcaption>E-mail.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">6</div>
+                <div class="step-body">
+                    <h3>Confirmar E-mail</h3>
+                    <p>Repita exatamente o mesmo e-mail digitado acima.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/confEmail.png" alt="Campo Confirmar E-mail">
+                    <figcaption>Confirmar e-mail.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">7</div>
+                <div class="step-body">
+                    <h3>Senha</h3>
+                    <p>Crie uma senha forte: mínimo 8 caracteres, misture letras, números e símbolos.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/senhaP2.png" alt="Campo Senha">
+                    <figcaption>Senha criada.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">8</div>
+                <div class="step-body">
+                    <h3>Confirmar Senha</h3>
+                    <p>Digite a mesma senha para confirmar e evitar erros de digitação.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/confSenha.png" alt="Campo Confirmar Senha">
+                    <figcaption>Confirmar senha.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">9</div>
+                <div class="step-body">
+                    <h3>Clicar em “Cadastrar”</h3>
+                    <p>Revise os dados e clique no botão <strong>Cadastrar</strong> para finalizar. Após clicar, você será redirecionado para a página de login.</p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/btnCadastrar.png" alt="Botão Cadastrar">
+                    <figcaption>Botão Cadastrar.</figcaption>
+                </figure>
+            </article>
+
+            <article class="step-card">
+                <div class="num">10</div>
+                <div class="step-body">
+                    <h3>Já possui uma conta?</h3>
+                    <p>Se você já possui cadastro no S.C.O.R.E, volte para a página inicial clicando no botão <strong>Já tem uma conta? Logue nela.</strong></p>
+                </div>
+                <figure class="step-figB">
+                    <img src="./pictures/jaTemConta.png" alt="Tela de login do S.C.O.R.E">
+                    <figcaption> Acessando sua conta pelo login.</figcaption>
+                </figure>
+            </article>
+            
+
+           
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+}
+
+/* Container principal do chat */
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+.btn-voltar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #ff4d4d; /* vermelho claro */
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-voltar:hover {
+    background-color: #e04343;
+    transform: scale(1.02);
+}
+
+/* Lateral com lista de contatos */
+.computadores {
+    width: 220px;
+    background-color: #51b6fa;
+    padding: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.computadores h3 {
+    margin: 0 0 10px 0;
+}
+
+.btn-computador {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    color: #51b6fa;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-computador:hover {
+    background-color: #e6f2ff;
+    transform: scale(1.02);
+}
+
+/* Área principal do chat */
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.chat h2 {
+    margin: 10px;
+    padding: 5px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Mensagens */
+.mensagens {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mensagem {
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.mensagem.enviada {
+    background-color: #bfeaff;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.mensagem.recebida {
+    background-color: #f0f0f0;
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* Formulário de envio */
+.form-envio {
+    display: flex;
+    padding: 10px;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+}
+
+.form-envio textarea {
+    flex: 1;
+    resize: none;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-envio button {
+    margin-left: 8px;
+    padding: 10px 15px;
+    background-color: #51b6fa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.form-envio button:hover {
+    background-color: #3da7e6;
+}
+
+/* Campo de busca na lateral */
+.campo-busca {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Home - S.C.O.R.E</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-side">
+
+      <div class="welcome-text">
+        <h1 class="fade-in">Bem-vindo ao S.C.O.R.E</h1>
+        <p class="subtitle">Seu sistema de comunicação off-line rápida escolar</p>
+      </div>
+
+      <form class="login-form" id="formLogin">
+        <p class="login-title">Entrar</p>
+
+        <div class="input-group" id="userGroup">
+          <input type="number" id="rm" placeholder="RM" required />
+          <span class="icon success-icon">✔️</span>
+          <span class="icon error-icon">❌</span>
+          <div class="error-message">Por favor, preencha o RM.</div>
+        </div>
+
+        <div class="input-group" id="senhaGroup">
+          <input type="password" id="senha" placeholder="Senha" required />
+          <span class="icon success-icon">✔️</span>
+          <span class="icon error-icon">❌</span>
+          <div class="error-message">Por favor, preencha a senha.</div>
+        </div>
+
+        <span id="mensagem"></span>
+
+        <a href="./cadastrar/cadastrar.html" class="signup-link">Ainda não tem uma conta? Cadastre-se</a>
+        <button type="button" id="btnLogin">Entrar</button>
+      </form>
+
+
+
+    </div>
+
+    <div class="header">
+      <span>S.C.O.R.E</span>
+      <img src="./pictures/logo.jpg" alt="Logo" />
+    </div>
+
+    <div class="right-side">
+      <img src="./pictures/login.png" alt="Login" />
+    </div>
+  </div>
+
+  <a href="tutorialLogin.html" class="help-button" title="Ajuda / Tutorial">?</a>
+
+</body>
+
+</html>
