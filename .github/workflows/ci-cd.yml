@@ -14,12 +14,10 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-
-      - name: Verificar sintaxe PHP
+          
+      - name: Verificar sintaxe de todos os arquivos PHP
         run: |
-          php -l login.php
-          php -l cadastrar.php
-          php -l principal.php
+          find . -name "*.php" -exec php -l {} \;
 
       - name: Verificar se arquivos principais existem
         run: |
