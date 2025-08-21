@@ -19,6 +19,9 @@ jobs:
         run: |
           find . -name "*.php" -exec php -l {} \;
 
+      - name: Listar todos os arquivos
+        run: ls -R
+
       - name: Verificar se arquivos principais existem
         run: |
           test -f index.html
