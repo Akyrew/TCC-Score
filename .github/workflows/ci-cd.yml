@@ -1,0 +1,28 @@
+name: CI/CD - S.C.O.R.E
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
+
+      - name: Instalar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Verificar sintaxe PHP
+        run: |
+          php -l index.php
+          php -l login.php
+          php -l cadastro.php
+
+      - name: Criar artefato (zip do projeto)
+        uses: actions/upload-artifact@v2
+        with:
+          name: score-projeto
+          path: .
