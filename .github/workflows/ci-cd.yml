@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Instalar PHP
         uses: shivammathur/setup-php@v2
@@ -22,7 +22,7 @@ jobs:
           php -l cadastro.php
 
       - name: Criar artefato (zip do projeto)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: score-projeto
           path: .
