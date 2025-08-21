@@ -21,8 +21,8 @@ jobs:
 
       - name: Verificar se arquivos principais existem
         run: |
-          test -f ScoreSeparado/index.html
-          test -f ScoreSeparado/cadastrar.html
+          test -f index.html
+          test -f cadastrar/cadastrar.html
 
       - name: Criar artefato (zip do projeto)
         uses: actions/upload-artifact@v4
